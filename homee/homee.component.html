@@ -1,0 +1,44 @@
+<div style="height: 100vh;width: 100%;margin-top: 60px; background-repeat: no-repeat; background-size: cover; background-position: center;" class="abcd">
+
+    
+    <div style=" height: 100vh;width: 100%; display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;">
+
+    <div style="color: rgb(218, 11, 56);font-size: 20px;">Search your book here!</div>
+
+    <div class="wrap" >
+        <div class="search" id="myform">
+            
+            <input type="search" id="books" [(ngModel)]="bookName"  style="height: 6vh;width:140vh;" placeholder="Enter Author,Book Id or Book Name">
+           
+             <button type="submit" (click)="callfun()" style="height: 6vh;width: 15vh; "    class="searchButton">
+             Search
+          </button>
+        </div>
+     </div>
+     <!-- Output here -->
+     <div >
+     <div id="result" *ngFor="let book of booksList" style="display: flex;flex-direction: column; justify-content: center;align-items: center;">
+      
+        <!-- <img src={{book.volumeInfo.imageLinks.thumbnail}} alt=""> -->
+     
+        <div> <h5>{{ book.volumeInfo.title }}</h5></div>
+      
+        <div> <h5> By: {{ book.volumeInfo.authors }}</h5></div>
+      
+        <div> <a href={{book.volumeInfo.infoLink}}>
+            <button id="imagebutton" class="btn btn-primary">Read More</button>
+        </a>
+    </div>
+    
+</div>
+</div>
+    
+</div>
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<script src="myscript.js"></script> 
